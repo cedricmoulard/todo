@@ -1,0 +1,19 @@
+<div class="container" *ngIf="loaded$ | async">
+  <div class="header">
+    <h2>Beautiful Todo List</h2>
+    <app-add-todo (addTodo)="addTodo($event)"></app-add-todo>
+  </div>
+  <div class="content">
+    <app-todo-list [todoList]="todoList$ | async"
+                   (todoClicked)="changeTodoStatus($event)"></app-todo-list>
+  </div>
+  <div class="footer">
+
+    <app-filter-todo [filter]="filter$ | async" (filterChanged)="filter($event)"></app-filter-todo>
+  </div>
+</div>
+<div class="container" *ngIf="!(loaded$ | async)">
+  <div class="content">
+    En cours de chargement...
+  </div>
+</div>
