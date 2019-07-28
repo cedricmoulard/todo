@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FilterTodoComponent } from './filter-todo.component';
-import {MatButtonToggleModule} from "@angular/material";
-
+import { MatButtonToggleModule } from '@angular/material';
 
 
 @NgModule({
@@ -15,4 +14,5 @@ import {MatButtonToggleModule} from "@angular/material";
     MatButtonToggleModule
   ]
 })
-export class FilterTodoModule { }
+export class FilterTodoModule {
+}

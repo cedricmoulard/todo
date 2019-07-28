@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TodoListComponent } from './todo-list.component';
+import { MockComponent } from 'ng-mocks';
+import { MatList, MatListItem } from '@angular/material';
+import { TodoListItemComponent } from '../todo-list-item/todo-list-item.component';
 
 describe('TodoListComponent', () => {
   let component: TodoListComponent;
@@ -8,9 +11,14 @@ describe('TodoListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodoListComponent ]
+      declarations: [
+        TodoListComponent,
+        MockComponent(MatList),
+        MockComponent(MatListItem),
+        MockComponent(TodoListItemComponent),
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +27,10 @@ describe('TodoListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('doit créer le composant', () => {
     expect(component).toBeTruthy();
   });
+
+  test.todo(`doit afficher la liste des todo`);
+  test.todo(`doit transmettre un evènement lors du clic sur un todo`);
 });

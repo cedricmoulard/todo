@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FilterTodoComponent } from './filter-todo.component';
+import { MockComponent } from 'ng-mocks';
+import { MatButtonToggle, MatButtonToggleGroup } from '@angular/material';
 
 describe('FilterTodoComponent', () => {
   let component: FilterTodoComponent;
@@ -8,9 +10,12 @@ describe('FilterTodoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FilterTodoComponent ]
+      declarations: [FilterTodoComponent,
+        MockComponent(MatButtonToggle),
+        MockComponent(MatButtonToggleGroup),
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +24,11 @@ describe('FilterTodoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('doit créer le composant', () => {
     expect(component).toBeTruthy();
   });
+
+  test.todo(`doit afficher 3 boutons`);
+  test.todo(`doit émettre un evènement sur le clic de n'importe quel bouton`);
+
 });

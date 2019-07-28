@@ -1,19 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-hello',
   template: `
     <p>
-      Hello world !!
+      {{ title }}
     </p>
   `,
   styles: []
 })
-export class HelloComponent implements OnInit {
+export class HelloComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  title = 'Hello world !!';
 
 }

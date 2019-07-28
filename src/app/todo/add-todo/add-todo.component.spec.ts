@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddTodoComponent } from './add-todo.component';
+import { MockComponent } from 'ng-mocks';
+import { MatButton, MatFormField, MatInput } from '@angular/material';
 
 describe('AddTodoComponent', () => {
   let component: AddTodoComponent;
@@ -8,9 +10,13 @@ describe('AddTodoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddTodoComponent ]
+      declarations: [AddTodoComponent,
+        MockComponent(MatInput),
+        MockComponent(MatButton),
+        MockComponent(MatFormField),
+      ],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +25,13 @@ describe('AddTodoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('doit créer le composant', () => {
     expect(component).toBeTruthy();
   });
+
+  test.todo(`ne doit pas activer le bouton si le nom est trop court`);
+  test.todo(`doit activer le bouton si le nom est assez long`);
+  test.todo(`doit émettre un evènement sur le clic`);
+
+
 });

@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HelloComponent } from './hello.component';
-import {HelloRoutingModule} from "./hello-routing.module";
-
+import { HelloRoutingModule } from './hello-routing.module';
 
 
 @NgModule({
@@ -13,4 +12,5 @@ import {HelloRoutingModule} from "./hello-routing.module";
   ],
   exports: [HelloComponent]
 })
-export class HelloModule { }
+export class HelloModule {
+}

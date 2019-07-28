@@ -8,9 +8,9 @@ describe('HelloComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HelloComponent ]
+      declarations: [HelloComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +19,9 @@ describe('HelloComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('doit créer le composant', () => {
     expect(component).toBeTruthy();
   });
+
+  test.todo(`doit afficher le titre`);
 });

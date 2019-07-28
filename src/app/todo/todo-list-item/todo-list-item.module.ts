@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { TodoListItemComponent } from './todo-list-item.component';
 
 
-
 @NgModule({
   declarations: [TodoListItemComponent],
   imports: [
@@ -11,4 +10,5 @@ import { TodoListItemComponent } from './todo-list-item.component';
   ],
   exports: [TodoListItemComponent]
 })
-export class TodoListItemModule { }
+export class TodoListItemModule {
+}

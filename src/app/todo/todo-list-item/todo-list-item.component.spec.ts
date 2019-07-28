@@ -8,9 +8,9 @@ describe('TodoListItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodoListItemComponent ]
+      declarations: [TodoListItemComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +19,11 @@ describe('TodoListItemComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('doit créer le composant', () => {
     expect(component).toBeTruthy();
   });
+
+  test.todo(`doit afficher le todo`);
+  test.todo(`doit émettre un evènement sur le clic`);
+  test.todo(`doit barrer le todo s'il est terminé`);
 });

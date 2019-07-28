@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {TodoInterface} from "./todo.interface";
-import {Select, Store} from "@ngxs/store";
-import {TodoActions} from "./+state/todo.actions";
-import {TodoState} from "./+state/todo.state";
-import {Observable} from "rxjs";
+import { Component, Inject, OnInit } from '@angular/core';
+import { TodoInterface } from './todo.interface';
+import { Observable } from 'rxjs';
+import { Select } from '@ngxs/store';
+import { TodoState } from './+state/todo.state';
+import { TodoFacade } from './+state/todo.facade';
 
 
 @Component({
@@ -17,22 +17,22 @@ export class TodoComponent implements OnInit {
   @Select(TodoState.filter) filter$: Observable<TodoInterface.Filter>;
   @Select(TodoState.loaded) loaded$: Observable<boolean>;
 
-  constructor(private store: Store) {
-    store.dispatch(new TodoActions.GetAll());
+  constructor(@Inject(TodoFacade) private readonly todoFacade: TodoFacade) {
   }
 
   ngOnInit() {
+    this.todoFacade.getAll();
   }
 
   changeTodoStatus(todo: TodoInterface.Todo) {
-    this.store.dispatch(new TodoActions.ChangeStatus(todo.id));
+    this.todoFacade.changeStatus(todo);
   }
 
   addTodo(name: string) {
-    this.store.dispatch(new TodoActions.Add(name));
+    this.todoFacade.add(name);
   }
 
   filter(filter: TodoInterface.Filter) {
-    this.store.dispatch(new TodoActions.Filter(filter));
+    this.todoFacade.filter(filter);
   }
 }

@@ -1,10 +1,10 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {TodoInterface} from "../todo.interface";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { TodoInterface } from '../todo.interface';
 
 @Component({
   selector: 'app-todo-list-item',
   template: `
-    <div class="todo" [ngClass]="todo.completed ? 'status-completed' : ''" (click)="todoClicked.emit()">
+    <div *ngIf="todo" class="todo" [ngClass]="todo.completed ? 'status-completed' : ''" (click)="todoClicked.emit()">
       {{ todo.name }}
     </div>
   `,

@@ -1,5 +1,5 @@
-import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
-import {TodoInterface} from "../todo.interface";
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TodoInterface } from '../todo.interface';
 
 @Component({
   selector: 'app-filter-todo',

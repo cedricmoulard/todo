@@ -1,3 +1,6 @@
+/**
+ * Définit les structures des objets manipulés
+ */
 export namespace TodoInterface {
 
   export interface Todo {
@@ -8,7 +11,7 @@ export namespace TodoInterface {
 
   export enum Filter {
     ALL = 'ALL',
-    IN_PROGRESS= 'IN_PROGRESS',
+    IN_PROGRESS = 'IN_PROGRESS',
     COMPLETED = 'COMPLETED'
   }
 }
