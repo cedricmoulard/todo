@@ -1,32 +1,23 @@
 import { TestBed } from '@angular/core/testing';
-
 import { TodoFacade } from './todo.facade';
-import { TodoService } from '../todo.service';
+import { MockTodoService } from '@mock-data/todo-service.mocks';
 
-const mockTodoService = {
-  getAll: jest.fn(),
-  add: jest.fn(),
-  update: jest.fn()
-};
 
 describe('TodoFacade', () => {
   beforeEach(() => TestBed.configureTestingModule({
     providers: [
       TodoFacade,
-      {
-        provide: TodoService,
-        useValue: mockTodoService
-      }
+      MockTodoService.provide
     ]
   }));
 
-  test('doit créer le service', () => {
+  test('doit créer la facade', () => {
     const facade: TodoFacade = TestBed.get(TodoFacade);
     expect(facade).toBeTruthy();
   });
 
-  test.todo(`doit retourner la liste des todos`);
-  test.todo(`doit ajouter un todo`);
-  test.todo(`doit mettre à jour un todo`);
-  test.todo(`doit émettre une action pour filtrer les todo`);
+  test.todo(`doit émettre une action avec la liste des tâches`);
+  test.todo(`doit émettre une action avec une nouvelle tâche`);
+  test.todo(`doit émettre une action avec une tâche modifiée`);
+  test.todo(`doit émettre une action pour filtrer les tâches`);
 });

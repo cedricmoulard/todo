@@ -61,10 +61,6 @@ describe('TodoComponent', () => {
 
   });
 
-  afterEach(() => {
-    jest.resetAllMocks();
-  });
-
   test('doit créer le composant', () => {
     expect(component).toBeTruthy();
   });

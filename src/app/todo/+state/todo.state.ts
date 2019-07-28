@@ -3,15 +3,20 @@ import { TodoActions } from './todo.actions';
 import { TodoInterface } from '../todo.interface';
 import * as _ from 'lodash';
 
-
-interface TodoStateModel {
+export interface TodoStateModel {
   loaded: boolean;
   todoList: TodoInterface.Todo[];
   filter: TodoInterface.Filter;
 }
 
+const TODO_STATE_KEY = 'todo';
+
+export interface TodoPartialState {
+  [TODO_STATE_KEY]: TodoStateModel;
+}
+
 @State<TodoStateModel>({
-  name: 'todo',
+  name: TODO_STATE_KEY,
   defaults: {
     loaded: false,
     todoList: [],
@@ -46,7 +51,6 @@ export class TodoState {
 
   @Action(TodoActions.AddAll)
   addAll({getState, setState}: StateContext<TodoStateModel>, {todoList}: TodoActions.AddAll) {
-
     setState({
       ...getState(),
       loaded: true,

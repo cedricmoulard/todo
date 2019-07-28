@@ -27,6 +27,10 @@ module.exports = {
     "!**/*mocks.ts",
     "!**/environments/**",
     "!**/node_modules/**",
-  ]
+  ],
+  moduleNameMapper: {
+    "@mock-data/(.*)$": "<rootDir>/mock-data/$1"
+  },
+  clearMocks: true
 };
 

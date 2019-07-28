@@ -2,8 +2,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { TodoInterface } from './todo.interface';
 import { Observable } from 'rxjs';
 import { Select } from '@ngxs/store';
-import { TodoState } from './+state/todo.state';
 import { TodoFacade } from './+state/todo.facade';
+import { TodoState } from './+state/todo.state';
 
 
 @Component({
