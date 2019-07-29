@@ -3,12 +3,10 @@ import { CommonModule } from '@angular/common';
 import { TodoRoutingModule } from './todo-routing.module';
 import { TodoComponent } from './todo.component';
 import { TodoListModule } from './todo-list/todo-list.module';
-import { NgxsModule } from '@ngxs/store';
-import { TodoState } from './+state/todo.state';
 import { AddTodoModule } from './add-todo/add-todo.module';
 import { FilterTodoModule } from './filter-todo/filter-todo.module';
-import { TodoService } from './todo.service';
-import { TodoFacade } from './+state/todo.facade';
+import { TodoService } from './+state/todo.service';
+import { TodoStateModule } from './+state/todo-state.module';
 
 
 @NgModule({
@@ -19,9 +17,9 @@ import { TodoFacade } from './+state/todo.facade';
     TodoListModule,
     AddTodoModule,
     FilterTodoModule,
-    NgxsModule.forFeature([TodoState])
+    TodoStateModule
   ],
-  providers: [TodoService, TodoFacade]
+  providers: [TodoService]
 })
 export class TodoModule {
 }

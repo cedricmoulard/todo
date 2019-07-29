@@ -6,7 +6,6 @@ import { NgxsModule } from '@ngxs/store';
 import { environment } from '../environments/environment';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxsDispatchPluginModule } from '@ngxs-labs/dispatch-decorator';
 
 @NgModule({
   declarations: [
@@ -16,8 +15,7 @@ import { NgxsDispatchPluginModule } from '@ngxs-labs/dispatch-decorator';
     BrowserAnimationsModule,
     AppRoutingModule,
     NgxsModule.forRoot([], {developmentMode: !environment.production}),
-    NgxsReduxDevtoolsPluginModule.forRoot(),
-    NgxsDispatchPluginModule.forRoot()
+    NgxsReduxDevtoolsPluginModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

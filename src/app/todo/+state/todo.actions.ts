@@ -8,28 +8,56 @@ export namespace TodoActions {
   /**
    * Ajoute des tâches au state
    */
-  export class AddAll {
-    static readonly type = '[Todo] Add All';
+  export class GetAll {
+    static readonly type = '[Todo] Get All';
+  }
+
+
+  /**
+   * Ajoute des tâches au state
+   */
+  export class GetAllSuccess {
+    static readonly type = '[Todo] Get All Success';
 
     constructor(public todoList: TodoInterface.Todo[]) {
     }
   }
 
   /**
-   * Ajoute une tâche
+   * Demande l'ajout d'une tâche
    */
   export class Add {
     static readonly type = '[Todo] Add Todo';
+
+    constructor(public name: string) {
+    }
+  }
+
+  /**
+   * Ajoute une tâche
+   */
+  export class AddSuccess {
+    static readonly type = '[Todo] Add Todo Success';
 
     constructor(public todo: TodoInterface.Todo) {
     }
   }
 
   /**
-   * Mets à jour une tâches
+   * Demande le changement d'état d'une tâche
    */
-  export class Update {
-    static readonly type = '[Todo] Update';
+  export class ChangeStatus {
+    static readonly type = '[Todo] Change Status';
+
+    constructor(public id: string) {
+    }
+  }
+
+  /**
+   * Change l'état d'une tâche
+   */
+  export class ChangeStatusSuccess {
+    static readonly type = '[Todo] Change Status Success';
 
     constructor(public todo: TodoInterface.Todo) {
     }
@@ -44,5 +72,13 @@ export namespace TodoActions {
     constructor(public filter: TodoInterface.Filter) {
     }
   }
+
+  export class ThrowException {
+    static readonly type = '[Todo] Throw Exception';
+
+    constructor(public description: string, cause: any) {
+    }
+  }
+
 
 }

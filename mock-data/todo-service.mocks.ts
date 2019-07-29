@@ -1,4 +1,4 @@
-import { TodoService } from '../src/app/todo/todo.service';
+import { TodoService } from '../src/app/todo/+state/todo.service';
 
 export namespace MockTodoService {
   export const mock = {

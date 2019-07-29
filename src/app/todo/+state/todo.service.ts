@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { TodoInterface } from './todo.interface';
+import { TodoInterface } from '../todo.interface';
 
 const KEY = 'todoList';
 const initialTodoList = [
