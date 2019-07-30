@@ -2,7 +2,7 @@ import { Action, Selector, State, StateContext } from '@ngxs/store';
 import { TodoActions } from './todo.actions';
 import { TodoInterface } from '../todo.interface';
 import * as _ from 'lodash';
-import { catchError, map, mergeMap } from 'rxjs/operators';
+import { catchError, mergeMap } from 'rxjs/operators';
 import { Inject } from '@angular/core';
 import { TodoService } from './todo.service';
 
@@ -101,7 +101,7 @@ export class TodoState {
 
     const todoTobeUpdated = getState().todoList.find(todoInList => todoInList.id === id);
 
-    return this.todoService.update(id, {completed: !todoTobeUpdated.completed}).pipe(
+    return this.todoService.update({...todoTobeUpdated, completed: !todoTobeUpdated.completed}).pipe(
       mergeMap(updatedTodo => dispatch(new TodoActions.ChangeStatusSuccess(updatedTodo))),
       catchError(error => dispatch(new TodoActions.ThrowException(`Le changement d'état de la la tâche a échoué`, error)))
     );

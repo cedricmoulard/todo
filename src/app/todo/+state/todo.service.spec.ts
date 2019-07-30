@@ -17,7 +17,7 @@ describe('TodoService', () => {
     expect(todoService).toBeTruthy();
   });
 
-  test(`doit retourner la liste des todos`,async ()=>{
+  test(`doit retourner la liste des todos`, async () => {
 
 
     todoService.getAll().subscribe(todoList => expect(todoList).toEqual(null));
